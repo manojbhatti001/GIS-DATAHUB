@@ -199,7 +199,7 @@ const Homepage = () => {
             {/* Description */}
             <div className="max-w-3xl mx-auto mb-10">
               <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed font-medium">
-                A curated hub of GIS and Remote Sensing resources for students, researchers, and professionals
+                Accurated hub of GIS and Remote Sensing resources for students, researchers, and professionals
               </p>
             </div>
 
