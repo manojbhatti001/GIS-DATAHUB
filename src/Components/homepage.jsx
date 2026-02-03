@@ -215,7 +215,7 @@ const Homepage = () => {
                 href="#featured"
                 className="px-8 py-4 bg-white border-2 border-gray-300 text-gray-700 rounded-xl font-bold text-lg shadow-md hover:shadow-lg transition-all hover:scale-105 hover:border-blue-500 hover:text-blue-600"
               >
-                View Featured
+                View Feature
               </a>
             </div>
 
