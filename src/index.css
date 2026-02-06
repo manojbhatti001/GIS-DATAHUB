@@ -1,3 +1,154 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+
+    /* Gradient Animation */
+    @keyframes gradient-shift {
+
+        0%,
+        100% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+    .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient-shift 3s ease infinite;
+    }
+
+    /* Float Animation */
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    /* Shimmer Effect */
+    @keyframes shimmer {
+        0% {
+            background-position: -1000px 0;
+        }
+
+        100% {
+            background-position: 1000px 0;
+        }
+    }
+
+    .animate-shimmer {
+        background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                transparent 100%);
+        background-size: 1000px 100%;
+        animation: shimmer 2s infinite;
+    }
+
+    /* Glow Pulse */
+    @keyframes glow-pulse {
+
+        0%,
+        100% {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+
+        50% {
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+        }
+    }
+
+    .animate-glow {
+        animation: glow-pulse 2s ease-in-out infinite;
+    }
+
+    /* Card Entrance Animation */
+    @keyframes card-entrance {
+        from {
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    .animate-card-entrance {
+        animation: card-entrance 0.6s ease-out forwards;
+    }
+
+    /* Perspective 3D */
+    .perspective-1000 {
+        perspective: 1000px;
+    }
+
+    .preserve-3d {
+        transform-style: preserve-3d;
+    }
+
+    /* Rotate on Hover */
+    .rotate-y-5 {
+        transform: rotateY(5deg);
+    }
+
+    .rotate-y-minus-5 {
+        transform: rotateY(-5deg);
+    }
+
+    /* Mobile Animation Optimization */
+    .animate-card-entrance,
+    .animate-float,
+    .animate-gradient,
+    .animate-shimmer,
+    .animate-glow {
+        will-change: transform, opacity;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+
+    /* Ensure animations work on mobile */
+    @media (max-width: 768px) {
+        .animate-card-entrance {
+            animation: card-entrance 0.5s ease-out forwards;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #3b82f6, #6366f1);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #2563eb, #4f46e5);
+}
